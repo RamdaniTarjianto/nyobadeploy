@@ -23,7 +23,7 @@ app = Flask(__name__)
 
 def predict_label(img):
     i = np.asarray(img) / 255.0
-    i = i.reshape(150, 150, 3)
+    i = i.reshape(1, 150, 150, 3)
     p = model.predict(i)
     result = label[np.argmax(p)]
     return result
