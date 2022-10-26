@@ -15,7 +15,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 
 print(os.getcwd())
-model = keras.models.load_model("model_A2_.h5")
+model = keras.models.load_model("model_A2.h5")
 label = ["Hourse", "Human"]
 
 app = Flask(__name__)
