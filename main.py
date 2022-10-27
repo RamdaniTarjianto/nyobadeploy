@@ -1,5 +1,5 @@
-# Import Library
 import requests
+import tensorflow
 from keras.preprocessing import image
 import urllib.request
 from flask import Flask, request, jsonify
@@ -11,11 +11,12 @@ from tensorflow import keras
 import tensorflow as tf
 import io
 import os
+
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 
 print(os.getcwd())
-model = keras.models.load_model("model_A2.h5")
+model = tensorflow.keras.models.load_model("model_A2.h5")
 label = ["Hourse", "Human"]
 
 app = Flask(__name__)
@@ -44,4 +45,5 @@ def index():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+    # app.run(debug=True)
+    app.run(debug=True)
